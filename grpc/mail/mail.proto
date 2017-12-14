@@ -1,0 +1,15 @@
+syntax = "proto3";
+package mail;
+
+service Mail {
+    rpc SendMail (MailRequest) returns (MailResponse) {}
+}
+
+message MailRequest {
+    string mail = 1;
+    string url = 2;
+}
+
+message MailResponse {
+    bool success = 1;
+}
