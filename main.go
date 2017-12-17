@@ -3,6 +3,9 @@ package main
 import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"github.com/micro-company/go-auth/handlers/mail"
+	"errors"
+
 
 	pb "github.com/micro-company/go-mail-crd/grpc/mail"
 	"net"
@@ -16,6 +19,16 @@ const (
 type server struct{}
 
 func (s *server) SendMail(ctx context.Context, in *pb.MailRequest) (*pb.MailResponse, error) {
+	// Send email
+	data := mail.RecoveryData{
+		Mail: in.Mail,
+		Url:  in.Url,
+	}
+	err := mail.Recovery(data)
+	if err != nil {
+		return &pb.MailResponse{Success: false}, errors.New("failed to send message")
+	}
+
 	return &pb.MailResponse{Success: true}, nil
 }
 

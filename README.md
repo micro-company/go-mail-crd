@@ -15,6 +15,13 @@ go get -u github.com/golang/protobuf/proto
 protoc -I grpc/mail/ grpc/mail/mail.proto --go_out=plugins=grpc:grpc/mail
 ```
 
+### ENV
+
+| Name ENV              | Default value             |
+|-----------------------|---------------------------|
+| SMTP_USERNAME         | smtpName                  |
+| SMTP_PASSWORD         | secretKey                 |
+
 ### Stack
 
 - Go
