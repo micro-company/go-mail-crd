@@ -3,7 +3,7 @@ package main
 import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	"github.com/micro-company/go-auth/handlers/mail"
+	"github.com/micro-company/go-mail-crd/handlers/mail"
 	"errors"
 
 
