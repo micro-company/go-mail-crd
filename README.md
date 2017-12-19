@@ -21,6 +21,7 @@ protoc -I grpc/mail/ grpc/mail/mail.proto --go_out=plugins=grpc:grpc/mail
 |-----------------------|---------------------------|
 | SMTP_USERNAME         | smtpName                  |
 | SMTP_PASSWORD         | secretKey                 |
+| GRPC_PORT             | 50051                     |
 
 ### Stack
 
