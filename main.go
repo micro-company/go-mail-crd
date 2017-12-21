@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"github.com/micro-company/go-mail-crd/handlers/mail"
@@ -9,14 +10,26 @@ import (
 
 	pb "github.com/micro-company/go-mail-crd/grpc/mail"
 	"net"
-	"log"
 )
 
 const (
 	port = ":50051"
 )
 
+var (
+	log = logrus.New()
+)
+
 type server struct{}
+
+func init() {
+	// Logging =================================================================
+	// Setup the logger backend using Sirupsen/logrus and configure
+	// it to use a custom JSONFormatter. See the logrus docs for how to
+	// configure the backend at github.com/Sirupsen/logrus
+	log.Formatter = new(logrus.JSONFormatter)
+}
+
 
 func (s *server) SendMail(ctx context.Context, in *pb.MailRequest) (*pb.MailResponse, error) {
 	// Send email
@@ -41,6 +54,7 @@ func main() {
     // Create a new gRPC server
     s := grpc.NewServer()
     pb.RegisterMailServer(s, &server{})
+	log.Info("Run services on port " + port)
     if err := s.Serve(lis); err != nil {
     	log.Fatalf("failed to server: %v", err)
 	}

@@ -2,16 +2,34 @@
 
 
 [[projects]]
+  name = "github.com/batazor/go-auth"
+  packages = ["utils"]
+  revision = "472bea7c1257d6bc264a6a198ec250c1a237a050"
+  version = "0.1.0"
+
+[[projects]]
   name = "github.com/go-chi/chi"
   packages = [".","middleware"]
   revision = "687d2792aedd8e8ac3bbd8592cf55b91d7ea8ce9"
   version = "v3.3.1"
 
 [[projects]]
+  name = "github.com/go-redis/redis"
+  packages = [".","internal","internal/consistenthash","internal/hashtag","internal/pool","internal/proto"]
+  revision = "9c885d5ba8a22f260badcffde1649915fbeebfc0"
+  version = "v6.7.5"
+
+[[projects]]
   branch = "master"
   name = "github.com/golang/protobuf"
   packages = ["proto","ptypes","ptypes/any","ptypes/duration","ptypes/timestamp"]
   revision = "1e59b77b52bf8e4b449a57e6f79f21226d571845"
+
+[[projects]]
+  name = "github.com/micro-company/go-auth"
+  packages = ["db"]
+  revision = "472bea7c1257d6bc264a6a198ec250c1a237a050"
+  version = "0.1.0"
 
 [[projects]]
   name = "github.com/sirupsen/logrus"
@@ -22,8 +40,8 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "94eea52f7b742c7cbe0b03b22f0c4c8631ece122"
+  packages = ["ssh/terminal"]
+  revision = "d585fd2cc9195196078f516b69daff6744ef5e84"
 
 [[projects]]
   branch = "master"
@@ -35,13 +53,13 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "571f7bbbe08da2a8955aed9d4db316e78630e9a3"
+  revision = "d818ba11af4465e00c1998bd3f8a55603b422290"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/text"
   packages = ["collate","collate/build","internal/colltab","internal/gen","internal/tag","internal/triegen","internal/ucd","language","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
-  revision = "d5a9226ed7dd70cade6ccae9d37517fe14dd9fee"
+  revision = "eb22672bea55af56d225d4e35405f4d2e9f062a0"
 
 [[projects]]
   branch = "master"
@@ -55,9 +73,15 @@
   revision = "e687fa4e6424368ece6e4fe727cea2c806a0fcb4"
   version = "v1.8.2"
 
+[[projects]]
+  branch = "v2"
+  name = "gopkg.in/mgo.v2"
+  packages = [".","bson","internal/json","internal/sasl","internal/scram"]
+  revision = "3f83fa5005286a7fe593b055f0d7771a7dce4655"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9e609a7d8494d752fe42fd34fa1b0b978de4bc2896f6c2974bf9f83acebf256f"
+  inputs-digest = "21e69c6bd311f5095d49c873b70fa8ba43ffee1a7d5dc5ec2766f504c0c8dca7"
   solver-name = "gps-cdcl"
   solver-version = 1
