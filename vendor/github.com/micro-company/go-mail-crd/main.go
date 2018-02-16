@@ -5,8 +5,8 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"github.com/micro-company/go-mail-crd/handlers/mail"
-	"github.com/micro-company/go-mail-crd/handlers/crd"
 	"errors"
+
 
 	pb "github.com/micro-company/go-mail-crd/grpc/mail"
 	"net"
@@ -50,9 +50,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-
-	// Run CRD
-	go crd.Run()
 
     // Create a new gRPC server
     s := grpc.NewServer()

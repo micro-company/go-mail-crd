@@ -9,7 +9,3 @@
 [[constraint]]
   name = "github.com/sirupsen/logrus"
   version = "1.0.3"
-
-[[constraint]]
-  name = "k8s.io/client-go"
-  version = "6.0.0"
